@@ -74,11 +74,12 @@ function PageMain() {
   return (
     <>
       <Header />
+     
       <Content>
-              
       <Connections>
         {totalConnetcion} conexôes.
-      </Connections>
+      </Connections>  
+     
         <Chat>
 
           {messages.map((message, index) => {

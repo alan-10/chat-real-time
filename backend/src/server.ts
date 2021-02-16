@@ -16,7 +16,7 @@ const io = new Server(server);
 
 let totalConnection = 0;
 
-
+let totalMessages = [];
 
 
 interface Imessage {
@@ -34,6 +34,7 @@ io.on('connection', ioSocket => {
 
 
   ioSocket.on('chatMessage', (data: Imessage) => {
+    totalMessages.push(data);
     console.log(`to message is ${data.message}`);
     io.emit('chatMessage', data);
   });

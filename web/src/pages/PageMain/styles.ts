@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-
+  position:relative;
+  width: min(560px, 100%);
 `;
 
 export const Content = styled.div`
@@ -9,7 +10,9 @@ export const Content = styled.div`
   flex-direction:column;
   align-items: center;
   justify-content: center;
-
+  overflow:hidden;
+  max-height:900px;
+  
 `;
 
 export const Chat = styled.div`
@@ -21,6 +24,11 @@ export const Chat = styled.div`
   background: ${props => props.theme.colors.chat};
 
   position: relative;
+
+  overflow:scroll;
+  ::-webkit-scrollbar{
+    display:none;
+  }
  
 `;
 
@@ -31,20 +39,21 @@ export const Connections = styled.div`
 
 
 export const Form = styled.form`
-  width: 100%;
-  bottom:0;
-  position:absolute;
 
+  bottom:0;
+  position:fixed;
+  width:100%;
   display: flex;
   align-items:flex-end;
-  
+
 
   input {
-    flex: 1;
+   
     height: 3rem;
     outline: none;
     padding: 5px;
     font-size:1.2rem;
+    width: min(490px, 100%);
    
   }
 
